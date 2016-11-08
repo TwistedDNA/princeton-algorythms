@@ -1,4 +1,4 @@
-package main.java.unionFind.quickFind;
+package main.java.unionFind;
 
 import main.java.unionFind.UnionFind;
 
