@@ -1,5 +1,6 @@
 package main.java.unionFind;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -29,6 +30,17 @@ public class QuickFindUFTest {
     @Test
     public void testWeightedQuickUnionWithPathCompression() {
         shouldBeProperlyConnected(new WeightedQuickUnionUFWithPathCompression(10));
+    }
+
+    @Test
+    public void findMaxTest(){
+        WeightedQuickUnionUFWithPathCompressionAndFind implementation = new WeightedQuickUnionUFWithPathCompressionAndFind(5);
+        implementation.union(0, 1);
+        implementation.union(0, 2);
+        implementation.union(2, 4);
+        assertEquals("Max element for {0,1,2,4} should be 4",4,implementation.find(1));
+        assertEquals("Max element for {0,1,2,4} should be 4",4,implementation.find(0));
+        assertEquals("Max element for {0,1,2,4} should be 4",3,implementation.find(3));
     }
 
 
